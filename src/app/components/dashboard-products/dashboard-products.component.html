@@ -1,0 +1,9 @@
+<div class="app-header">
+    <h1>Products</h1>
+    <span class="spacer"></span>
+    <button mat-flat-button color="accent" (click)="addProduct()">ADD PRODUCT</button>
+</div>
+
+<div class="row">
+    <app-dashboard-product-card class="col-md-4 col-sm-4 col-xl-4" *ngFor="let product of products" [product]="product"></app-dashboard-product-card>
+</div>

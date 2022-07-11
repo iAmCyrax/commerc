@@ -1,0 +1,13 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.pages {
+    display: flex;
+}
+
+.page {
+    color: inherit;
+    cursor: pointer;
+    margin-bottom: 5px;
+}

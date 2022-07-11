@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Login</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]="formGroup">
+        <mat-form-field class="formfield" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field class="formfield" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide">
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+        </mat-form-field>
+    </form>
+    
+    <p>Not have an account? <a routerLink="/sign-up" mat-dialog-close>Sign up</a></p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="buy()">OKAY</button>
+    <button mat-flat-button color="accent" mat-dialog-close>CANCEL</button>
+</div>

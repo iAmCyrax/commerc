@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "commerc-71c2d": {
+      "hosting": {
+        "commerc": [
+          "commerc-71c2d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "commerc-71c2d"
+  }
+}

@@ -1,0 +1,15 @@
+code {
+    color: #ff4081;
+}
+
+.error-container {
+    text-align: center;
+
+    &-text {
+        font-size: 2em;
+    }
+
+    &-go-home {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,16 @@
+.price {
+    text-align: right;
+}
+
+input.price::-webkit-outer-spin-button,
+input.price::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.price {
+    -moz-appearance: textfield;
+}
+
+.formfield {
+    min-width: 300px;
+}

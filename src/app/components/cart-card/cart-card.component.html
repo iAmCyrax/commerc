@@ -1,0 +1,11 @@
+<mat-card [ngClass]="{ 'no-visible': !visibility }" class="product-card">
+    <mat-card-title>{{ item.product.name }}</mat-card-title>
+    <img [src]="item.product.imageSrc" mat-card-lg-image>
+    <mat-card-content>
+        <p>${{ item.product.price }}</p>
+        <!-- <p>{{ item.uuid }}</p> -->
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button color="accent" (click)="remove()">REMOVE</button>
+    </mat-card-actions>
+</mat-card>

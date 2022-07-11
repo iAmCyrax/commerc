@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <span>Commerc</span>
+    <!-- <span class="spacer"></span> -->
+    <mat-list class="pages">
+        <mat-list-item class="page" routerLink="/">Home</mat-list-item>
+        <mat-list-item class="page" routerLink="/all-products">Products</mat-list-item>
+        <mat-list-item class="page" routerLink="/liked-products">Liked Products</mat-list-item>
+        <mat-list-item class="page" routerLink="/cart">Cart</mat-list-item>
+        <mat-list-item *ngIf="isAdmin" class="page" routerLink="/dashboard">Dashboard</mat-list-item>
+    </mat-list>
+    <span class="spacer"></span>
+    <button *ngIf="authService && (authService.userData | async); else noAccount" mat-button [matMenuTriggerFor]="accountMenu">
+        <mat-icon>account_circle</mat-icon>
+        Logged as {{ (authService.userData | async)?.email }} <span *ngIf="isAdmin">(Admin)</span>
+    </button>
+    <ng-template #noAccount>
+        <button mat-button color="accent" [matMenuTriggerFor]="menu">
+            Login / Sign up
+        </button>
+    </ng-template>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/login">Login</button>
+    <button mat-menu-item routerLink="/sign-up">Sign Up</button>
+</mat-menu>
+
+<mat-menu #accountMenu="matMenu">
+    <button mat-menu-item routerLink="/cart">Cart</button>
+    <button mat-menu-item routerLink="/liked-products">Liked Products</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>

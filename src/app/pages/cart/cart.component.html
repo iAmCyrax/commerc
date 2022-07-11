@@ -1,0 +1,17 @@
+<h1>Cart</h1>
+
+<div class="row">
+    <app-cart-card class="col-md-4 col-sm-4 col-xl-4" *ngFor="let item of products" [item]="item"></app-cart-card>
+</div>
+
+<div class="complete-shopping" *ngIf="products.length != 0; else noProducts">
+    <mat-divider></mat-divider>
+    <br>
+    <span>Cart Summary: <strong>${{ total }}</strong></span>
+    <br>
+    <button mat-flat-button color="primary" class="complete-shopping-button" (click)="complete()">Complete Shopping</button>
+</div>
+
+<ng-template #noProducts>
+    <p>Your cart is empty</p>
+</ng-template>

@@ -1,0 +1,22 @@
+<h1>Sign Up</h1>
+
+<form [formGroup]="formGroup">
+    <mat-form-field class="formfield" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="formfield" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+
+    <button (click)="signUp()" mat-flat-button color="primary">Sign Up</button>
+</form>

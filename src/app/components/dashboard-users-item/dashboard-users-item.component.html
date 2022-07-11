@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-title>{{ user.email }}</mat-card-title>
+    <mat-card-content>
+        Password: {{ hide ? (user.password | password) : user.password }} <button class="hide" (click)="hide = !hide"
+            mat-icon-button>
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <br>
+        <p>{{ user.userId }}</p>
+        <span class="see-details" (click)="seeDetails()">Click here</span> to see more details.
+    </mat-card-content>
+</mat-card>

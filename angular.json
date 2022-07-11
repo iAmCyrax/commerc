@@ -8,7 +8,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "skipTests": true
+          "skipTests": true,
+          "skipImport": true
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -50,6 +51,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -118,12 +120,26 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "commerc:build:production",
+            "firebaseProject": "commerc-71c2d",
+            "firebaseHostingSite": "commerc-71c2d"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "807bc0ff-3dbf-4b64-aefc-c1887c61dd95"
   }
 }

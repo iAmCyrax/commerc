@@ -1,0 +1,11 @@
+<h1>Liked Products</h1>
+
+<div class="row">
+    <app-liked-card class="col-md-4 col-xl-4 col-sm-4" *ngFor="let product of products" [product]="product"></app-liked-card>
+</div>
+
+<div *ngIf="products.length === 0">
+    <p>
+        You didn't like any items. <a routerLink="/all-products">Go to see all products.</a>
+    </p>
+</div>
